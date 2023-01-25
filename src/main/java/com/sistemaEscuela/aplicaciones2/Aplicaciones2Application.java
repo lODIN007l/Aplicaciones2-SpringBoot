@@ -10,4 +10,6 @@ public class Aplicaciones2Application {
 		SpringApplication.run(Aplicaciones2Application.class, args);
 	}
 
+
+
 }

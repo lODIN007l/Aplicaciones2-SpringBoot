@@ -13,6 +13,30 @@ public class Materia {
     private String nombre_materia;
     private Integer cod_materia;
 
+
+    @OneToOne
+    @JoinColumn(name = "docente_id_id")
+    private Docente docente_id;
+    @ManyToOne
+    @JoinColumn(name = "curso_id_id")
+    private Curso curso_id;
+
+    public Docente getDocente_id() {
+        return docente_id;
+    }
+
+    public void setDocente_id(Docente docente_id) {
+        this.docente_id = docente_id;
+    }
+
+    public Curso getCurso_id() {
+        return curso_id;
+    }
+
+    public void setCurso_id(Curso curso_id) {
+        this.curso_id = curso_id;
+    }
+
     public void setId(long id) {
         this.id = id;
     }

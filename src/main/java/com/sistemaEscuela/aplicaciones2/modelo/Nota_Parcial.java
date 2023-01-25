@@ -12,12 +12,35 @@ public class Nota_Parcial {
     private Integer acumulado3;
     private Integer acumulado4;
     private Integer acumulado5;
+    @OneToOne
+    @JoinColumn(name = "cod_materia_id")
+    private Materia cod_materia;
+
+    @OneToOne
+    @JoinColumn(name = "codigo_estu_id")
+    private Estudiante codigo_estu;
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true,nullable = false)
     private long id;
+
+    public Estudiante getCodigo_estu() {
+        return codigo_estu;
+    }
+
+    public void setCodigo_estu(Estudiante codigo_estu) {
+        this.codigo_estu = codigo_estu;
+    }
+
+    public Materia getCod_materia() {
+        return cod_materia;
+    }
+
+    public void setCod_materia(Materia cod_materia) {
+        this.cod_materia = cod_materia;
+    }
 //    TODO: Asociar a la materia que corresponda  al estudiante 
 
     public void setId(long id) {
@@ -67,4 +90,11 @@ public class Nota_Parcial {
     public Integer getAcumulado5() {
         return acumulado5;
     }
+
+
+    public Float calcularnotaFinalSinExamen(){
+       Float notaFinalSinexamen= (float) ((getAcumulado1()+getAcumulado2()+getAcumulado3()+getAcumulado4()+getAcumulado5())/5);
+       return notaFinalSinexamen;
+    }
+
 }

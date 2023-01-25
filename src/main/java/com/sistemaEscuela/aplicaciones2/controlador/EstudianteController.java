@@ -3,6 +3,7 @@ package com.sistemaEscuela.aplicaciones2.controlador;
 import com.sistemaEscuela.aplicaciones2.modelo.Estudiante;
 import com.sistemaEscuela.aplicaciones2.servicios.EstudianteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ public class EstudianteController {
     @Autowired
     EstudianteService estuServi;
 
+    @PreAuthorize("hasRole('ESTUDIANTE')")
     @GetMapping()
     public ArrayList<Estudiante> obEstudiantes(){
         return estuServi.obtenerEstudiantes();

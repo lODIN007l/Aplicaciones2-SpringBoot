@@ -1,0 +1,4 @@
+aplicaciones2:
+  app:
+    jwtExpirationMs: 76300000
+    jwtSecret: knowledgeFactory

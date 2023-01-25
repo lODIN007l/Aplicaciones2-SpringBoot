@@ -11,11 +11,22 @@ public class Docente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true,nullable = false)
     private long id;
+
+    private  String docente_id;
     private String nombres;
     private String apellidos;
     private Integer cedula;
     private String rol="docente";
     private Integer codigo;
+
+
+    public void setDocente_id(String docente_id) {
+        this.docente_id = docente_id;
+    }
+
+    public String getDocente_id() {
+        return docente_id;
+    }
 
     public void setCedula(Integer cedula) {
         this.cedula = cedula;

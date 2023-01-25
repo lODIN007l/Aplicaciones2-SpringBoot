@@ -17,14 +17,14 @@ public class Estudiante {
     private String apellidos;
     private Integer cedula;
     private String rol="estudiante";
-    private Integer codigo;
+    private Integer codigo_estu;
 
     public void setCedula(Integer cedula) {
         this.cedula = cedula;
     }
 
-    public void setCodigo(Integer codigo) {
-        this.codigo = codigo;
+    public void setCodigo(Integer codigo_estu) {
+        this.codigo_estu = codigo_estu;
     }
 
     public void setApellidos(String apellidos) {
@@ -64,6 +64,6 @@ public class Estudiante {
     }
 
     public Integer getCodigo() {
-        return codigo;
+        return codigo_estu;
     }
 }
